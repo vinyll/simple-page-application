@@ -2,6 +2,8 @@
 
 An full client-side SPA made **simple**.
 
+[View demo](https://vinyll.github.io/simple-page-application/)
+
 Just open the _index.html_ file with your web-browser.
 No server, transpilation or whatever issue-prone concept.
 
@@ -13,3 +15,5 @@ The technologies behind this:
 - [Milligram](https://milligram.io/) for CSS to make HTML natively beautiful.
 
 It's very easy to plug this with an API for example.
+
+This skeleton can run on its own in a [Github Pages](https://vinyll.github.io/simple-page-application/).
