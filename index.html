@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset=utf-8>
+
+<link rel=stylesheet href=https://www.gitcdn.xyz/repo/milligram/milligram/master/dist/milligram.min.css>
+
+<!-- Application content -->
+<main>
+  Please wait while loading…
+</main>
+
+<!-- External Dependencies -->
+<script src=https://www.gitcdn.xyz/repo/riot/riot/master/riot+compiler.min.js></script>
+<script src=https://www.gitcdn.xyz/repo/riot/route/master/dist/route+tag.min.js></script>
+
+<!-- Web-components -->
+<script type=riot/tag src=./pages/home.tag.html></script>
+<script type=riot/tag src=./pages/list.tag.html></script>
+<script type=riot/tag src=./components/x-item.tag.html></script>
+
+<!-- Booting script -->
+<script>
+  // Declarations
+  const app = document.querySelector('main')
+
+  // Routes
+  route('/', () => {
+    app.innerHTML = '<page-home></page-home>'
+    riot.mount('page-home')
+  })
+  route('/list', () => {
+    app.innerHTML = '<page-list></page-list>'
+    riot.mount('page-list')
+  })
+  route.base('#!')
+
+  function init() {
+    route.start(true)
+  }
+
+  // Application is ready to load
+  init()
+</script>
