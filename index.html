@@ -10,11 +10,11 @@
 
 <!-- External Dependencies -->
 <script src=https://www.gitcdn.xyz/repo/riot/riot/master/riot+compiler.min.js></script>
-<script src=https://www.gitcdn.xyz/repo/riot/route/master/dist/route+tag.min.js></script>
+<script src=https://www.gitcdn.xyz/repo/visionmedia/page.js/master/page.js></script>
 
 <!-- Web-components -->
 <script type=riot/tag src=./pages/home.tag.html></script>
-<script type=riot/tag src=./pages/list.tag.html></script>
+<script type=riot/tag src=./pages/vote.tag.html></script>
 <script type=riot/tag src=./components/x-item.tag.html></script>
 
 <!-- Booting script -->
@@ -23,20 +23,21 @@
   const app = document.querySelector('main')
 
   // Routes
-  route('/', () => {
+  page('/', () => {
     app.innerHTML = '<page-home></page-home>'
     riot.mount('page-home')
   })
-  route('/list', () => {
-    app.innerHTML = '<page-list></page-list>'
-    riot.mount('page-list')
+  page('/vote/:favorite?', (ctx) => {
+    app.innerHTML = '<page-vote></page-vote>'
+    riot.mount('page-vote', { favorite: ctx.params.favorite })
   })
-  route.base('#!')
-
-  function init() {
-    route.start(true)
-  }
+  page('*', () => {
+    app.innerHTML = 'Oops… the page does not exist!'
+  })
 
   // Application is ready to load
+  function init() {
+    page({hashbang: true})
+  }
   init()
 </script>

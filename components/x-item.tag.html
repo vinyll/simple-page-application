@@ -1,13 +1,17 @@
 <x-item>
-  <span title={ opts.label }>{ opts.label }</span>
+  <span class={ opts.selected && 'selected' } title={ opts.label }>{ opts.label }</span>
 
   <style scoped>
-    :scope {
+    span {
       display: inline-block;
       margin-right: 1rem;
       padding: .5rem 1.5rem;
       border-radius: .5rem;
       background-color: #ddd;
     }
+    .selected::before {
+      content: "✓ ";
+    }
+
   </style>
 </x-item>

@@ -1,6 +1,6 @@
 # _Simple_ Page Application
 
-An full client-side SPA made **simple**.
+A full client-side SPA made **simple**.
 
 [View demo](https://vinyll.github.io/simple-page-application/)
 
@@ -9,11 +9,19 @@ No server, transpilation or whatever issue-prone concept.
 
 This just works out of the 📦.
 
-The technologies behind this:
+
+Based on very solid & lite libraries (this whole app is 24Kb, app and libraries included!)
+
+
+## The libraries it uses
+
 - [RiotJS](https://riot.js.org) for web components made easy.
-- [Riot Router](https://github.com/riot/route), a Vanilla basic routing system.
+- [PageJS](http://visionmedia.github.io/page.js/), a Vanilla basic routing system.
 - [Milligram](https://milligram.io/) for CSS to make HTML natively beautiful.
 
-It's very easy to plug this with an API for example.
+Agnostic of server technologies.
+It's very convenient to plug this with an API or whatever you feel like.
 
 This skeleton can run on its own in a [Github Pages](https://vinyll.github.io/simple-page-application/).
+
+Just clone and run your own app 👾
